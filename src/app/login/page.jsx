@@ -1,10 +1,39 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 import Link from "next/link";
-import { FaGoogle } from "react-icons/fa";
-import { FaFacebook } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import { FaDiscord } from "react-icons/fa";
+import { FaGoogle, FaFacebook, FaLinkedin, FaDiscord } from "react-icons/fa";
 
 const LoginPage = () => {
+
+  const emailRef = useRef(null);
+
+  //  useEffect(() => {
+  //    const demoEmail = "demo@gmail.com";
+  //    let i = 0;
+
+  //    const typing = setInterval(() => {
+  //      if (i < demoEmail.length) {
+  //        if (emailRef.current) {
+  //          emailRef.current.value += demoEmail[i];
+  //        }
+  //        i++;
+  //      } else {
+  //        clearInterval(typing);
+  //      }
+  //    }, 100);
+
+  //    gsap.from(".fieldset", {
+  //      opacity: 0,
+  //      y: 50,
+  //      duration: 1,
+  //    });
+
+  //    return () => clearInterval(typing); // cleanup
+  //  }, []);
+
+
   return (
     <div className="relative min-h-screen flex items-center justify-center">
       <div className="absolute inset-0 bg-black/40 backdrop-blur-sm z-10"></div>
@@ -19,6 +48,7 @@ const LoginPage = () => {
           </p>
 
           <input
+          ref={emailRef}
             type="email"
             className="input w-full rounded-full outline-none"
             placeholder="Email"

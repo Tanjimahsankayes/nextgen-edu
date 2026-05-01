@@ -9,19 +9,21 @@ import { Poppins } from "next/font/google";
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "600"] });
 const Banner = () => {
     return (
-      <div className="relative rounded-xl overflow-hidden">
+      <div className="relative overflow-hidden w-full">
         <div
-          className="relative bg-cover bg-center min-h-screen md:flex md:gap-10 items-center "
+          className="relative bg-cover bg-center min-h-screen md:flex justify-between items-center "
           style={{
             backgroundImage: `url(${Bannerbg.src})`,
           }}
         >
           <div className="absolute inset-0 bg-black/40"></div>
-          <div className="absolute inset-0 bg-black/40"></div>
 
           <div className="space-y-4 flex flex-col justify-center relative ">
-            <h2 className={`${poppins.className} text-4xl font-bold text-center md:text-left pt-4`}>
-              Next Generation Learning Starts Here
+            <h2
+              className={`${poppins.className} text-4xl font-bold text-center md:text-left pt-4`}
+            >
+              Next Generation Learning{" "}
+              <span className="text-amber-300">Starts Here</span>
             </h2>
             <p className="text-white/80 text-center md:text-left">
               Interactive courses, expert mentors, and real skills for the
@@ -31,13 +33,13 @@ const Banner = () => {
             <div className="flex gap-4 flex-wrap text-center items-center justify-center md:justify-start my-4">
               <button className="btn btn-active btn-accent rounded-full transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
                 Start Free Trial
-                <span>
+                <span className="ml-2">
                   <CiLocationArrow1 />
                 </span>
               </button>
               <button className="btn btn-outline btn-primary rounded-full transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
                 How To Work
-                <span>
+                <span className="ml-2">
                   <IoPlayOutline />
                 </span>
               </button>
