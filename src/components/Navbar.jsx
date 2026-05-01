@@ -1,13 +1,17 @@
+"use client";
+
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
+  const pathname = usePathname();
 
     const links = <>
-        <li> <Link href="/" >Home</Link> </li>
-        <li> <Link href="/courses" >Courses</Link> </li>
-        <li> <Link href="/" >My Profile</Link> </li>
+        <li> <Link href="/"className={pathname === "/" ? "text-primary font-semibold" : ""} >Home</Link> </li>
+        <li> <Link href="/courses" className={pathname === "/courses" ? "text-primary font-semibold" : ""} >Courses</Link> </li>
+        <li> <Link href="/" className={pathname === "/my" ? "text-primary font-semibold" : ""} >My Profile</Link> </li>
     </>
 
     return (
@@ -39,9 +43,9 @@ const Navbar = () => {
             </ul>
           </div>
           <Link href="/" className="btn btn-ghost text-xl">
-            <Image 
+            <Image
               src="/images/logBG.png"
-              alt='logo'
+              alt="logo"
               height={100}
               width={100}
             ></Image>
@@ -51,7 +55,7 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end">
-          <Link href="/login" className="btn">
+          <Link href="/login" className="btn btn-outline btn-primary rounded-full">
             Login
           </Link>
         </div>

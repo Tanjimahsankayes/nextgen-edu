@@ -29,13 +29,13 @@ const Banner = () => {
             </p>
 
             <div className="flex gap-4 flex-wrap text-center items-center justify-center md:justify-start my-4">
-              <button className="btn btn-active btn-accent transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
+              <button className="btn btn-active btn-accent rounded-full transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
                 Start Free Trial
                 <span>
                   <CiLocationArrow1 />
                 </span>
               </button>
-              <button className="btn btn-outline btn-primary transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
+              <button className="btn btn-outline btn-primary rounded-full transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
                 How To Work
                 <span>
                   <IoPlayOutline />
