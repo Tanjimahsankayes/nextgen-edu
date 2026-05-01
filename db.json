@@ -66,5 +66,40 @@
       "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
       "category": "Marketing"
     }
-  ]
+  ],
+  "instructor": [
+  {
+    "id": 1,
+    "name": "Sumaiya Khan",
+    "title": "Senior Web Development Instructor",
+    "rating": 4.8,
+    "totalStudents": 12000,
+    "totalCourses": 15,
+    "image": "https://images.unsplash.com/photo-1607746882042-944635dfe10e",
+    "category": "Web Development",
+    "experience": "8 years"
+  },
+  {
+    "id": 2,
+    "name": "Nusrat Jahan",
+    "title": "UI/UX Design Expert",
+    "rating": 4.7,
+    "totalStudents": 9500,
+    "totalCourses": 10,
+    "image": "https://images.unsplash.com/photo-1580894732444-8ecded7900cd",
+    "category": "Design",
+    "experience": "6 years"
+  },
+  {
+    "id": 3,
+    "name": "Tanvir Hasan",
+    "title": "Data Science Instructor",
+    "rating": 4.9,
+    "totalStudents": 15000,
+    "totalCourses": 20,
+    "image": "https://images.unsplash.com/photo-1556157382-97eda2d62296",
+    "category": "Data Science",
+    "experience": "10 years"
+  }
+]
 }
