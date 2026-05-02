@@ -5,15 +5,15 @@ import { FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
     return (
-      <div>
-        <footer className="footer sm:footer-horizontal bg-base-200 text-base-content p-10 place-items-center ">
+      <div className="bg-[#124170]">
+        <footer className="footer sm:footer-horizontal text-base-content p-10 place-items-center  ">
           <aside>
             <Image
               src="/images/logo.png"
               alt="Logo"
               height={120}
               width={120}
-              className="h-auto w-auto"
+              className="h-auto w-auto rounded-xl"
               priority
             ></Image>
             <p>
@@ -65,7 +65,7 @@ const Footer = () => {
             </div>
           </nav>
         </footer>
-        <div className=" bg-base-200 py-10 text-center ">
+        <div className=" bg-[#124170] py-10 text-center ">
           <p>© 2026 NextGen Edu. All rights reserved.</p>
         </div>
       </div>

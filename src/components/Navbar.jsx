@@ -43,7 +43,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="navbar bg-[#124170] shadow-sm">
       <div className="navbar-start">
         <div className="dropdown">
           <div
@@ -86,12 +86,12 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
-      <div className="navbar-end">
-        <Link
-          href="/login"
-          className="btn btn-outline btn-primary rounded-full"
-        >
+      <div className="navbar-end gap-3">
+        <Link href="/login" className="btn btn-soft btn-primary rounded-full">
           Login
+        </Link>
+        <Link href="/login" className="btn btn-active  btn-accent rounded-full">
+          Register
         </Link>
       </div>
     </div>

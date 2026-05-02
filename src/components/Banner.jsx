@@ -18,41 +18,43 @@ const Banner = () => {
         >
           <div className="absolute inset-0 bg-black/40"></div>
 
-          <div className="space-y-4 flex flex-col justify-center relative ">
-            <h2
-              className={`${poppins.className} text-4xl font-bold text-center md:text-left pt-4`}
-            >
-              Next Generation Learning{" "}
-              <span className="text-amber-300">Starts Here</span>
-            </h2>
-            <p className="text-white/80 text-center md:text-left">
-              Interactive courses, expert mentors, and real skills for the
-              future.
-            </p>
+          <div className="md:flex justify-between gap-10 w-11/12 mx-auto"> 
+            <div className="space-y-4 flex justify-center flex-col relative ">
+              <h2
+                className={`${poppins.className} text-4xl font-bold text-center md:text-left pt-4`}
+              >
+                Next Generation Learning{" "}
+                <span className="text-amber-300">Starts Here</span>
+              </h2>
+              <p className="text-white/80 text-center md:text-left">
+                Interactive courses, expert mentors, and real skills for the
+                future.
+              </p>
 
-            <div className="flex gap-4 flex-wrap text-center items-center justify-center md:justify-start my-4">
-              <button className="btn btn-active btn-accent rounded-full transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
-                Start Free Trial
-                <span className="ml-2">
-                  <CiLocationArrow1 />
-                </span>
-              </button>
-              <button className="btn btn-outline btn-primary rounded-full transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
-                How To Work
-                <span className="ml-2">
-                  <IoPlayOutline />
-                </span>
-              </button>
+              <div className="flex gap-4 flex-wrap text-center items-center justify-center md:justify-start my-4">
+                <button className="btn btn-active btn-accent rounded-full transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
+                  Start Free Trial
+                  <span className="ml-2">
+                    <CiLocationArrow1 />
+                  </span>
+                </button>
+                <button className="btn btn-outline btn-primary rounded-full transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
+                  How To Work
+                  <span className="ml-2">
+                    <IoPlayOutline />
+                  </span>
+                </button>
+              </div>
             </div>
-          </div>
-          <div className="relative justify-center flex ">
-            <Image
-              src={`https://i.pinimg.com/736x/82/48/b7/8248b74f7d5ac340fdb200ce349c20de.jpg`}
-              alt="Student"
-              height={400}
-              width={400}
-              className="rounded-full"
-            ></Image>
+            <div className="relative justify-center flex ">
+              <Image
+                src={`https://i.pinimg.com/736x/82/48/b7/8248b74f7d5ac340fdb200ce349c20de.jpg`}
+                alt="Student"
+                height={400}
+                width={400}
+                className="rounded-full"
+              ></Image>
+            </div>
           </div>
         </div>
       </div>
