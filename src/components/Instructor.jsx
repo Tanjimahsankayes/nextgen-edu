@@ -6,7 +6,7 @@ const InstructorPage = () => {
 
   return (
     <div className="bg-[#DFF1F1] w-full ">
-      <div className="py-8 mx-auto">
+      <div className="py-8 w-11/12 mx-auto">
         <h2 className="text-3xl font-bold my-6 text-black">Our Instructor :</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

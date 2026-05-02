@@ -9,14 +9,14 @@ const CourseCard = ({ course }) => {
   const { title, image, description } = course;
   return (
     <div className="mb-6 transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">
-      <div className="card bg-base-100 w-96 shadow-sm h-full flex flex-col">
+      <div className="card bg-base-100 w-full shadow-sm h-full flex flex-col">
         <figure>
           <Image
             src={image}
             alt={title}
             height={400}
             width={400}
-            className="object-cover w-full h-full"
+            className="object-cover"
           ></Image>
         </figure>
         <div className="card-body flex flex-col justify-between flex-1">

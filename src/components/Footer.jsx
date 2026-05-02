@@ -6,13 +6,15 @@ import { FaYoutube } from "react-icons/fa";
 const Footer = () => {
     return (
       <div>
-        <footer className="footer sm:footer-horizontal bg-base-200 text-base-content p-10 ">
+        <footer className="footer sm:footer-horizontal bg-base-200 text-base-content p-10 place-items-center ">
           <aside>
             <Image
               src="/images/logo.png"
               alt="Logo"
-              height={200}
-              width={200}
+              height={120}
+              width={120}
+              className="h-auto w-auto"
+              priority
             ></Image>
             <p>
               NextGen Education
@@ -21,14 +23,14 @@ const Footer = () => {
               future.
             </p>
           </aside>
-          <nav>
+          <nav className="flex md:flex-col text-center">
             <h6 className="footer-title">Quick Links</h6>
             <a className="link link-hover">Home</a>
             <a className="link link-hover">About us</a>
             <a className="link link-hover">Contact</a>
             <a className="link link-hover">Blog</a>
           </nav>
-          <nav>
+          <nav className="flex md:flex-col text-center">
             <h6 className="footer-title">Resources</h6>
             <a className="link link-hover">Help Center</a>
             <a className="link link-hover">Privacy Policy </a>
@@ -38,7 +40,7 @@ const Footer = () => {
           <nav>
             <h6 className="footer-title">Social & Contact</h6>
 
-            <div className="space-y-2">
+            <div className="space-y-2 ">
               <p>Email: support@nextgenedu.com </p>
               <p>Phone: +880 1234-567890</p>
               <p>Location: Dhaka, Bangladesh</p>

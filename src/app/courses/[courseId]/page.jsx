@@ -7,7 +7,7 @@ import { FaPlay } from "react-icons/fa";
 const CourseDetails = async({params}) => {
 
     const { courseId } = await params;
-    console.log(params);
+    
     const course = data.courses.find((c) => String(c.id) === String(courseId));
 
 
@@ -29,15 +29,15 @@ const CourseDetails = async({params}) => {
        category,
      } = course;
     return (
-      <div className="min-h-screen w-8/12 mx-auto flex flex-col items-center justify-center">
-        <div className="card h-full w-full p-8 lg:card-side bg-[#72BAA9] text-black shadow-sm">
+      <div className="min-h-screen px-4 md:w-8/12 mx-auto flex flex-col items-center justify-center">
+        <div className="card h-full w-full md:p-8 lg:card-side bg-[#72BAA9] text-black shadow-sm">
           <figure>
             <Image
               src={image}
               alt={title}
               height={400}
               width={400}
-              className="object-cover w-full h-full rounded-full"
+              className="object-cover w-full h-full rounded-full p-4"
             ></Image>
           </figure>
           <div className="card-body">
