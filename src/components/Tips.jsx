@@ -8,11 +8,11 @@ const LearningTips = () => {
     <div className=" bg-[#DFF1F1] text-black w-full py-8">
       <div className="w-11/12 mx-auto">
         <h1 className="text-3xl font-bold">Learning Techniques : </h1>
-        <div className="flex gap-10 justify-around py-8">
-          <div className="shadow-md p-4 rounded-md bg-base-100  ">
+        <div className="md:flex gap-8 py-8">
+          <div className="shadow-md p-4 rounded-md bg-base-100 mb-4">
             <h2 className="text-2xl text-center p-4 text-white">Study Tech </h2>
-            <div className="flex gap-2 ">
-              <div className="text-center shadow-2xl p-4 rounded-2xl bg-[#FFCEE3]">
+            <div className="flex-col md:flex gap-2 p-2">
+              <div className="text-center shadow-2xl p-4 mb-4 rounded-2xl bg-[#FFCEE3]">
                 <span className="flex items-center justify-center">
                   <FaBook size={50} />
                 </span>
@@ -32,9 +32,11 @@ const LearningTips = () => {
           </div>
 
           <div className="shadow-md p-4 rounded-md bg-base-100">
-            <h2 className="text-2xl text-center p-4 text-white">Time Management </h2>
-            <div className="flex gap-2">
-              <div className="text-center shadow-2xl p-4 rounded-2xl bg-[#FFCEE3]">
+            <h2 className="text-2xl text-center p-4 text-white">
+              Time Management
+            </h2>
+            <div className="flex-col md:flex gap-2 p-2">
+              <div className="text-center shadow-2xl p-4 mb-4 rounded-2xl bg-[#FFCEE3]">
                 <span className="flex items-center justify-center">
                   <IoIosTime size={50} />
                 </span>
