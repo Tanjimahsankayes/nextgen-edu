@@ -72,7 +72,7 @@ const LoginPage = () => {
             </Link>
           </fieldset>
         </div>
-        <div className="relative z-20 flex-1">
+        <div className="relative z-20 flex-1 flex flex-col justify-center">
           <h2 className="text-4xl font-bold text-center py-4">Welcome Back!</h2>
 
           <p className="text-center py-2 text-xl">

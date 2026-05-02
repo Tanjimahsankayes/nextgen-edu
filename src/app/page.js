@@ -1,6 +1,7 @@
 import AboutPage from "@/components/About";
 import Banner from "@/components/Banner";
 import InstructorPage from "@/components/Instructor";
+import PopularCoursesPage from "@/components/PopularCourses";
 import LearningTips from "@/components/Tips";
 import Image from "next/image";
 
@@ -10,6 +11,7 @@ export default function Home() {
       <main className="flex flex-1 flex-col items-center justify-between bg-white  sm:items-start">
         <Banner></Banner>
         <AboutPage></AboutPage>
+        <PopularCoursesPage></PopularCoursesPage>
         <LearningTips></LearningTips>
         <InstructorPage></InstructorPage>
       </main>

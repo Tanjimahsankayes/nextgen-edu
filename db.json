@@ -9,7 +9,8 @@
       "level": "Beginner",
       "description": "Learn full-stack web development from scratch.",
       "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-      "category": "Development"
+      "category": "Development", 
+      "popular": true
     },
     {
       "id": 2,
@@ -31,7 +32,8 @@
       "level": "Beginner",
       "description": "Build dynamic user interfaces using React and modern tools.",
       "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee",
-      "category": "Development"
+      "category": "Development",
+      "popular": true
     },
     {
       "id": 4,
@@ -53,7 +55,8 @@
       "level": "Intermediate",
       "description": "Analyze data and build models using Python libraries like NumPy and Pandas.",
       "image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4",
-      "category": "Data Science"
+      "category": "Data Science", 
+      "popular": true
     },
     {
       "id": 6,

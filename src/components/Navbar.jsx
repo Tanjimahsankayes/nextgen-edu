@@ -73,7 +73,7 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <Link href="/" className="btn btn-ghost text-xl">
+        <Link href="/" className=" text-xl">
           <Image
             src="/images/logBG.png"
             alt="logo"
@@ -90,7 +90,10 @@ const Navbar = () => {
         <Link href="/login" className="btn btn-soft btn-primary rounded-full">
           Login
         </Link>
-        <Link href="/login" className="btn btn-active  btn-accent rounded-full">
+        <Link
+          href="/login"
+          className="btn btn-active  btn-accent rounded-full hidden md:inline-flex "
+        >
           Register
         </Link>
       </div>

@@ -6,7 +6,7 @@ import { FaYoutube } from "react-icons/fa";
 const Footer = () => {
     return (
       <div className="bg-[#124170]">
-        <footer className="footer sm:footer-horizontal text-base-content p-10 place-items-center  ">
+        <footer className="footer sm:footer-horizontal text-base-content p-10 place-items-center grid grid-cols-2 justify-between ">
           <aside>
             <Image
               src="/images/logo.png"
@@ -23,21 +23,21 @@ const Footer = () => {
               future.
             </p>
           </aside>
-          <nav className="flex md:flex-col text-center">
+          <nav>
             <h6 className="footer-title">Quick Links</h6>
             <a className="link link-hover">Home</a>
             <a className="link link-hover">About us</a>
             <a className="link link-hover">Contact</a>
             <a className="link link-hover">Blog</a>
           </nav>
-          <nav className="flex md:flex-col text-center">
+          <nav>
             <h6 className="footer-title">Resources</h6>
             <a className="link link-hover">Help Center</a>
             <a className="link link-hover">Privacy Policy </a>
             <a className="link link-hover">Terms & Conditions </a>
             <a className="link link-hover">FAQ </a>
           </nav>
-          <nav>
+          <div>
             <h6 className="footer-title">Social & Contact</h6>
 
             <div className="space-y-2 ">
@@ -63,7 +63,7 @@ const Footer = () => {
                 </span>
               </a>
             </div>
-          </nav>
+          </div>
         </footer>
         <div className=" bg-[#124170] py-10 text-center ">
           <p>© 2026 NextGen Edu. All rights reserved.</p>
