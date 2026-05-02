@@ -91,7 +91,7 @@ const Navbar = () => {
           Login
         </Link>
         <Link
-          href="/login"
+          href="/register"
           className="btn btn-active  btn-accent rounded-full hidden md:inline-flex "
         >
           Register

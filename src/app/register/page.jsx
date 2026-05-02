@@ -1,17 +1,12 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import Link from "next/link";
-import { FaGoogle, FaFacebook, FaLinkedin, FaDiscord } from "react-icons/fa";
-import loginBG from '../../../public/images/loginBG.jpg';
-import logo from '../../../public/images/log.png';
 import Image from "next/image";
+import loginBG from "../../../public/images/loginBG.jpg";
+import logo from "../../../public/images/log.png";
+import { useRef } from "react";
 
-const LoginPage = () => {
-
+const RegisterPage = () => {
   const emailRef = useRef(null);
-
   return (
     <div
       className="relative min-h-screen flex items-center justify-center"
@@ -23,10 +18,20 @@ const LoginPage = () => {
       <div className="flex flex-col-reverse  md:flex-row-reverse gap-10 bg-base-100/80 rounded-box w-10/12  p-6 shadow-xl border-base-300">
         <div className="relative z-20 flex-1 ">
           <fieldset className="fieldset">
-            <h1 className="text-center text-xl text-amber-300 pb-4">
-              Continue Learning with NextGen Edu
+            <h1 className="text-center text-3xl pb-4 text-amber-300">
+              Join NextGen Edu Today...
             </h1>
 
+            <h1 className="text-center text-xl pb-4">
+              Create your account to access all courses and start learning.
+            </h1>
+
+            <input
+              ref={emailRef}
+              type="name"
+              className="input w-full rounded-full outline-none"
+              placeholder="Full Name"
+            />
             <input
               ref={emailRef}
               type="email"
@@ -39,40 +44,22 @@ const LoginPage = () => {
               className="input w-full rounded-full outline-none"
               placeholder="Password"
             />
+            <input
+              type="password"
+              className="input w-full rounded-full outline-none"
+              placeholder="Confirm Password"
+            />
 
-            <p className="text-right text-blue-700 hover:underline">
-              Forget Password?
-            </p>
 
             <button className="btn btn-primary mt-4 rounded-full w-full">
-              Login
+              Register
             </button>
-
-            <div className="flex items-center w-full pt-8">
-              <div className="flex-grow h-px bg-gray-300"></div>
-              <span className="mx-4 text-gray-500 text-sm">
-                or continue with
-              </span>
-              <div className="flex-grow h-px bg-gray-300"></div>
-            </div>
-
-            <div className="flex gap-4 justify-center py-4">
-              <FaGoogle size={30} />
-              <FaFacebook size={30} />
-              <FaLinkedin size={30} />
-              <FaDiscord size={30} />
-            </div>
-
-            <Link href="/" className="pt-10 text-center  ">
-              Not an account?{" "}
-              <span className="text-blue-600 hover:underline">
-                Register Now
-              </span>
-            </Link>
           </fieldset>
         </div>
         <div className="relative z-20 flex-1 flex flex-col justify-center">
-          <h2 className="text-4xl font-bold text-center py-4">Welcome Back!</h2>
+          <h2 className="text-4xl font-bold text-center py-4">
+            Start Learning with NextGen Edu
+          </h2>
 
           <p className="text-center py-2 text-xl">
             Pick up right where you left off and keep moving forward. Your
@@ -94,4 +81,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default RegisterPage;

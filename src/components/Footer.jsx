@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import { FaFacebook, FaLinkedin } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
@@ -28,7 +29,7 @@ const Footer = () => {
             <a className="link link-hover">Home</a>
             <a className="link link-hover">About us</a>
             <a className="link link-hover">Contact</a>
-            <a className="link link-hover">Blog</a>
+            <Link href='/courses' className="link link-hover">Course</Link>
           </nav>
           <nav>
             <h6 className="footer-title">Resources</h6>

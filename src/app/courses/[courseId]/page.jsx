@@ -29,31 +29,47 @@ const CourseDetails = async({params}) => {
        category,
      } = course;
     return (
-      <div className="min-h-screen px-4 md:w-8/12 mx-auto flex flex-col items-center justify-center">
-        <div className="card h-full w-full md:p-8 lg:card-side bg-[#72BAA9] text-black shadow-sm">
+      <div className="min-h-screen px-4 md:w-10/12 mx-auto flex flex-col items-center justify-center">
+        <div className=" h-full w-full md:p-8 lg:card-side bg-[#021A54] shadow-sm">
           <figure>
             <Image
               src={image}
               alt={title}
-              height={400}
-              width={400}
-              className="object-cover w-full h-full rounded-full p-4"
+              height={200}
+              width={200}
+              className="object-cover w-full h-64 p-4"
             ></Image>
           </figure>
           <div className="card-body">
             <h2 className="text-3xl font-bold"> {title} </h2>
             <p> {description} </p>
-            <h2 > Instructor : <span className="text-xl font-bold"> {instructor}</span>  </h2>
+            <h2>
+              {" "}
+              Instructor :{" "}
+              <span className="text-xl font-bold"> {instructor}</span>{" "}
+            </h2>
             <div className="flex justify-between gap-10 text-md ">
-              <h4> Category : <span className="text-xl font-bold"> {category}</span> </h4>
-              <h4 className="flex items-center gap-2 text-amber-800 text-right ml-auto text-2xl font-bold ">
+              <h4>
+                {" "}
+                Category :{" "}
+                <span className="text-xl font-bold"> {category}</span>{" "}
+              </h4>
+              <h4 className="flex items-center gap-2 text-amber-300 text-right ml-auto text-2xl font-bold ">
                 {rating} <IoIosStarHalf />
               </h4>
             </div>
 
             <div className="card-actions justify-end items-center flex ">
-              <p className='text-xl font-bold text-amber-800'> Duration : {duration} </p>
-              <button className="btn btn-primary">Start <span><FaPlay /></span> </button>
+              <p className="text-xl font-bold text-amber-300">
+                {" "}
+                Duration : {duration}{" "}
+              </p>
+              <button className="btn btn-primary">
+                Start{" "}
+                <span>
+                  <FaPlay />
+                </span>{" "}
+              </button>
             </div>
           </div>
         </div>
