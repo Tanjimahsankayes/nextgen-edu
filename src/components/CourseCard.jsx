@@ -24,6 +24,9 @@ const CourseCard = ({ course }) => {
           <p>{description}</p>
           <div className="card-actions justify-end">
             <Link href={`/courses/${course.id}`}>
+              <button className="btn btn-success">Enroll</button>
+            </Link>
+            <Link href={`/courses/${course.id}`}>
               <button className="btn btn-primary">Details</button>
             </Link>
           </div>

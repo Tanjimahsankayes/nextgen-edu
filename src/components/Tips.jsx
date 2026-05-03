@@ -5,10 +5,10 @@ import { TbFocus2 } from "react-icons/tb";
 
 const LearningTips = () => {
   return (
-    <div className=" bg-[#DFF1F1] text-black w-full py-8">
+    <div className=" bg-[#DFF1F1] text-black w-full pt-8">
       <div className="w-11/12 mx-auto">
         <h1 className="text-3xl font-bold">Learning Techniques : </h1>
-        <div className="md:flex gap-8 py-8">
+        <div className="md:flex gap-8 py-8 justify-around">
           <div className="shadow-md p-4 rounded-md bg-base-100 mb-4">
             <h2 className="text-2xl text-center p-4 text-white">Study Tech </h2>
             <div className="flex-col md:flex gap-2 p-2">
@@ -31,7 +31,7 @@ const LearningTips = () => {
             </div>
           </div>
 
-          <div className="shadow-md p-4 rounded-md bg-base-100">
+          <div className="shadow-md p-4 rounded-md bg-base-100 mb-4">
             <h2 className="text-2xl text-center p-4 text-white">
               Time Management
             </h2>

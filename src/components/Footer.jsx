@@ -26,10 +26,16 @@ const Footer = () => {
           </aside>
           <nav>
             <h6 className="footer-title">Quick Links</h6>
-            <a className="link link-hover">Home</a>
-            <a className="link link-hover">About us</a>
+            <Link href="/" className="link link-hover">
+              Home
+            </Link>
+            <Link href="/about" className="link link-hover">
+              About us
+            </Link>
             <a className="link link-hover">Contact</a>
-            <Link href='/courses' className="link link-hover">Course</Link>
+            <Link href="/courses" className="link link-hover">
+              Course
+            </Link>
           </nav>
           <nav>
             <h6 className="footer-title">Resources</h6>
@@ -58,7 +64,10 @@ const Footer = () => {
                   <FaYoutube size={30} />
                 </span>
               </a>
-              <a className="link link-hover">
+              <a
+                href="https://www.linkedin.com/in/tanjimahsankayes12/"
+                className="link link-hover"
+              >
                 <span>
                   <FaLinkedin size={30} />
                 </span>

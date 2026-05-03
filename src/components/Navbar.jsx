@@ -4,23 +4,31 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { usePathname } from "next/navigation";
+import { signOut, useSession } from "@/lib/auth-client";
+import { FaCircleUser } from "react-icons/fa6";
 
 const Navbar = () => {
   const pathname = usePathname();
 
+  const {data, isPending} = useSession();
+
+  if(isPending){
+    return <div>Loading...</div>
+  }
+
+  const user = data?.user;
+
   const links = (
     <>
       <li>
-        {" "}
         <Link
           href="/"
           className={pathname === "/" ? "text-primary font-semibold" : ""}
         >
           Home
-        </Link>{" "}
+        </Link>
       </li>
       <li>
-        {" "}
         <Link
           href="/courses"
           className={
@@ -28,16 +36,15 @@ const Navbar = () => {
           }
         >
           Courses
-        </Link>{" "}
+        </Link>
       </li>
       <li>
-        {" "}
         <Link
-          href="/my"
-          className={pathname === "/my" ? "text-primary font-semibold" : ""}
+          href="/profile"
+          className={pathname === "/profile" ? "text-primary font-semibold" : ""}
         >
           My Profile
-        </Link>{" "}
+        </Link>
       </li>
     </>
   );
@@ -86,16 +93,51 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
+
       <div className="navbar-end gap-3">
-        <Link href="/login" className="btn btn-soft btn-primary rounded-full">
-          Login
-        </Link>
-        <Link
-          href="/register"
-          className="btn btn-active  btn-accent rounded-full hidden md:inline-flex "
-        >
-          Register
-        </Link>
+        {user ? (
+          <>
+            <div className="dropdown dropdown-bottom  dropdown-end">
+              <div
+                tabIndex={0}
+                role="button"
+                className="cursor-pointer m-4 items-center"
+              >
+                <span>
+                  <FaCircleUser size={30} />
+                </span>
+              </div>
+              <ul
+                tabIndex="-1"
+                className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
+              >
+                <li>
+                  <Link href="/profile">My Profile</Link>
+                </li>
+                <li>
+                  <button onClick={ () => signOut()}>SignOut</button>
+                </li>
+              </ul>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="navbar-end gap-3">
+              <Link
+                href="/auth/signin"
+                className="btn btn-soft btn-primary rounded-full"
+              >
+                Login
+              </Link>
+              <Link
+                href="/auth/signup"
+                className="btn btn-active  btn-accent rounded-full hidden md:inline-flex "
+              >
+                Register
+              </Link>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
