@@ -9,11 +9,11 @@ const InstructorPage = () => {
       <div className="py-8 w-11/12 mx-auto">
         <h2 className="text-3xl font-bold my-6 text-black">Our Instructor :</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6  ">
           {instructor?.map((instruc, index) => (
             <div
               key={index}
-              className="card bg-base-100 shadow-sm transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2"
+              className="card bg-[#103f64] shadow-sm transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2"
             >
               <figure>
                 <Image

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { signOut, useSession } from "@/lib/auth-client";
 import { FaCircleUser } from "react-icons/fa6";
+import { FaUserGraduate } from "react-icons/fa";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -112,7 +113,7 @@ const Navbar = () => {
                 tabIndex={0}
                 className="cursor-pointer p-2 rounded-full hover:bg-white/10 transition"
               >
-                <FaCircleUser size={28} className="text-white" />
+                <FaUserGraduate size={28} className="text-white" />
               </div>
               <ul
                 tabIndex={0}

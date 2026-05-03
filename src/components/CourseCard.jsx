@@ -9,7 +9,7 @@ const CourseCard = ({ course }) => {
   const { title, image, description } = course;
   return (
     <div className="mb-6 transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">
-      <div className="card bg-base-100 w-full shadow-sm h-full flex flex-col">
+      <div className="card bg-[#DFF1F1] text-black w-full shadow-sm h-full flex flex-col">
         <figure>
           <Image
             src={image}

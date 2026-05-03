@@ -8,18 +8,18 @@ const LearningTips = () => {
     <div className=" bg-[#DFF1F1] text-black w-full pt-8">
       <div className="w-11/12 mx-auto">
         <h1 className="text-3xl font-bold">Learning Techniques : </h1>
-        <div className="md:flex gap-8 py-8 justify-around">
-          <div className="shadow-md p-4 rounded-md bg-base-100 mb-4">
+        <div className="md:flex gap-8 py-8 justify-around ">
+          <div className="shadow-md p-4 rounded-md mb-4  bg-[#103f64]">
             <h2 className="text-2xl text-center p-4 text-white">Study Tech </h2>
             <div className="flex-col md:flex gap-2 p-2">
-              <div className="text-center shadow-2xl p-4 mb-4 rounded-2xl bg-[#FFCEE3]">
+              <div className="text-center shadow-2xl p-4 mb-4 rounded-2xl bg-[#DFF1F1]">
                 <span className="flex items-center justify-center">
                   <FaBook size={50} />
                 </span>
                 <h2 className="text-xl">Study Techniques</h2>
                 <p>Use active recall and spaced repetition to learn faster.</p>
               </div>
-              <div className="text-center shadow-2xl p-4 rounded-2xl bg-[#FFCEE3]">
+              <div className="text-center shadow-2xl p-4 rounded-2xl bg-[#DFF1F1]">
                 <span className="flex items-center justify-center">
                   <FaBrain size={50} />
                 </span>
@@ -31,19 +31,19 @@ const LearningTips = () => {
             </div>
           </div>
 
-          <div className="shadow-md p-4 rounded-md bg-base-100 mb-4">
+          <div className="shadow-md p-4 rounded-md bg-[#103f64] mb-4">
             <h2 className="text-2xl text-center p-4 text-white">
               Time Management
             </h2>
             <div className="flex-col md:flex gap-2 p-2">
-              <div className="text-center shadow-2xl p-4 mb-4 rounded-2xl bg-[#FFCEE3]">
+              <div className="text-center shadow-2xl p-4 mb-4 rounded-2xl bg-[#DFF1F1]">
                 <span className="flex items-center justify-center">
                   <IoIosTime size={50} />
                 </span>
                 <h2 className="text-xl">Time Management</h2>
                 <p>Follow Pomodoro technique to stay focused and productive.</p>
               </div>
-              <div className="text-center shadow-2xl p-4 rounded-2xl bg-[#FFCEE3]">
+              <div className="text-center shadow-2xl p-4 rounded-2xl bg-[#DFF1F1]">
                 <span className="flex items-center justify-center">
                   <TbFocus2 size={50} />
                 </span>
