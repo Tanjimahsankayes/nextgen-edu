@@ -3,7 +3,6 @@ import data from "../../../db.json"
 
 
 const CoursesPage = () => {
-
     const courses = data.courses
     return (
       <div className="w-11/12 mx-auto">

@@ -3,8 +3,19 @@ import data from "../../../../db.json";
 import Image from 'next/image';
 import { IoIosStarHalf} from "react-icons/io";
 import { FaPlay } from "react-icons/fa";
+import { auth } from '@/lib/auth';
+import { headers } from 'next/headers';
+import { redirect } from 'next/navigation';
 
 const CourseDetails = async({params}) => {
+
+  const session = await auth.api.getSession({
+    headers: await headers()
+  });
+  const user = session?.user;
+  if(!user){
+          redirect('/auth/signin')
+      }
 
     const { courseId } = await params;
     
@@ -44,15 +55,14 @@ const CourseDetails = async({params}) => {
             <h2 className="text-3xl font-bold"> {title} </h2>
             <p> {description} </p>
             <h2>
-              {" "}
-              Instructor :{" "}
-              <span className="text-xl font-bold"> {instructor}</span>{" "}
+              Instructor :<span className="text-xl"> {instructor}</span>
+            </h2>
+            <h2>
+              Category :<span className="text-xl "> {category}</span>
             </h2>
             <div className="flex justify-between gap-10 text-md ">
               <h4>
-                {" "}
-                Category :{" "}
-                <span className="text-xl font-bold"> {category}</span>{" "}
+                <span className="text-xl "> {level}</span>
               </h4>
               <h4 className="flex items-center gap-2 text-amber-300 text-right ml-auto text-2xl font-bold ">
                 {rating} <IoIosStarHalf />
@@ -60,15 +70,15 @@ const CourseDetails = async({params}) => {
             </div>
 
             <div className="card-actions justify-end items-center flex ">
-              <p className="text-xl font-bold text-amber-300">
-                {" "}
-                Duration : {duration}{" "}
+              <p className=" ">
+                Duration :
+                <span className="text-xl text-amber-300">{duration}</span>
               </p>
               <button className="btn btn-primary">
-                Start{" "}
+                Start
                 <span>
                   <FaPlay />
-                </span>{" "}
+                </span>
               </button>
             </div>
           </div>

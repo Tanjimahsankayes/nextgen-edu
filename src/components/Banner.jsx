@@ -26,7 +26,7 @@ const Banner = () => {
 
         <div className="md:flex justify-between gap-10 w-11/12 mx-auto">
           <div className="space-y-4 flex justify-center flex-col relative ">
-            <div>
+            <div className="text-center md:text-left pt-4">
               {user ? (
                 <>
                   <h3 className="text-3xl font-bold uppercase">

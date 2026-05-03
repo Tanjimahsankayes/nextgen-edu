@@ -32,7 +32,7 @@ const RegisterPage = () => {
         toast.error("Something went wrong please try again");
       }
       if(data){
-        toast.success("SignUp Successfully");
+        toast.success("Register Successfull");
       }
   };
   return (

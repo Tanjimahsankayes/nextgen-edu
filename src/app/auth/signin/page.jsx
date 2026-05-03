@@ -32,7 +32,7 @@ const LoginPage = () => {
           toast.error("Something went wrong please try again");
         }
         if(data){
-          toast.success("SignUp Successfully");
+          toast.success("SignIn Successfully");
         }
     };
 
