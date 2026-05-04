@@ -2,7 +2,7 @@
 
 const AboutPage = () => {
     return (
-      <div className="bg-[#DFF1F1]">
+      <div className="bg-[#DFF1F1] w-full">
         <div className="text-center space-y-4 py-6 md:w-11/12 mx-auto text-black">
           <h4>About Us</h4>
           <div>

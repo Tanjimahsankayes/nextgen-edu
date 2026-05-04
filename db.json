@@ -21,7 +21,8 @@
       "level": "Intermediate",
       "description": "Master JavaScript concepts including ES6, async/await, and DOM manipulation.",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
-      "category": "Development"
+      "category": "Development",
+       "trending": true
     },
     {
       "id": 3,
@@ -44,7 +45,8 @@
       "level": "Beginner",
       "description": "Learn the basics of user interface and user experience design.",
       "image": "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c",
-      "category": "Design"
+      "category": "Design",
+         "trending": true
     },
     {
       "id": 5,
@@ -67,7 +69,8 @@
       "level": "Beginner",
       "description": "Understand SEO, social media marketing, and online branding strategies.",
       "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
-      "category": "Marketing"
+      "category": "Marketing",
+      "trending": true
     }
   ],
   "instructor": [

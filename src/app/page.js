@@ -3,6 +3,7 @@ import Banner from "@/components/Banner";
 import InstructorPage from "@/components/Instructor";
 import PopularCoursesPage from "@/components/PopularCourses";
 import LearningTips from "@/components/Tips";
+import TrendingCoursesPage from "@/components/TrendingCourses";
 import Image from "next/image";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
         <Banner></Banner>
         <AboutPage></AboutPage>
         <PopularCoursesPage></PopularCoursesPage>
+        <TrendingCoursesPage></TrendingCoursesPage>
         <LearningTips></LearningTips>
         <InstructorPage></InstructorPage>
       </main>

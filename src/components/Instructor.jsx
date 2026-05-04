@@ -13,7 +13,7 @@ const InstructorPage = () => {
           {instructor?.map((instruc, index) => (
             <div
               key={index}
-              className="card bg-[#103f64] shadow-sm transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2"
+              className="card bg-[#103f64] text-white shadow-sm transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2"
             >
               <figure>
                 <Image

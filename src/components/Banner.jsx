@@ -65,7 +65,7 @@ const Banner = () => {
             </div>
 
             <h2
-              className={`${poppins.className} text-4xl font-bold text-center md:text-left pt-4`}
+              className={`${poppins.className} text-4xl font-bold text-center md:text-left pt-4 text-white`}
             >
               Next Generation Learning{" "}
               <span className="text-amber-300">Starts Here</span>

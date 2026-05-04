@@ -5,36 +5,57 @@ import gsap from "gsap";
 import Link from "next/link";
 import { FaGoogle, FaFacebook, FaLinkedin, FaDiscord } from "react-icons/fa";
 import loginBG from "../../../../public/images/loginBG.jpg";
-import logo from '../../../../public/images/log.png';
+import logo from "../../../../public/images/log.png";
 import Image from "next/image";
 import { toast } from "react-toastify";
 import { authClient } from "@/lib/auth-client";
 
 const LoginPage = () => {
-
   const emailRef = useRef(null);
-  const onSubmit = async(e) => {
-        e.preventDefault();
-        const formData = new FormData(e.currentTarget);
-        const userData = Object.fromEntries(formData.entries());
-        console.log("form submitted", userData);
-  
-        const {data, error} = await authClient.signIn.email({
-          email : userData.email,
-          password : userData.password,
-          rememberMe : true,
-          callbackURL : '/'
-        });
-  
-        console.log("sign in",{data,error} )
-  
-        if(error){
-          toast.error("Something went wrong please try again");
-        }
-        if(data){
-          toast.success("SignIn Successfully");
-        }
-    };
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const userData = Object.fromEntries(formData.entries());
+    console.log("form submitted", userData);
+
+    const { data, error } = await authClient.signIn.email({
+      email: userData.email,
+      password: userData.password,
+      rememberMe: true,
+      callbackURL: "/",
+    });
+
+    console.log("sign in", { data, error });
+
+    if (error) {
+      toast.error("Something went wrong please try again");
+    }
+    if (data) {
+      toast.success("SignIn Successfully");
+    }
+  };
+
+  const handleGoogleSignIn = async () => {
+    try {
+      console.log("Attempting Google sign-in...");
+      const { data, error } = await authClient.signIn.social({
+        provider: "google",
+        callbackURL: "/",
+      });
+
+      console.log("Google sign-in response:", { data, error });
+
+      if (error) {
+        console.error("Google sign-in error:", error);
+        toast.error("Google sign-in failed. Please try again.");
+      } else {
+        toast.success("Signed in with Google successfully!");
+      }
+    } catch (error) {
+      console.error("Google sign-in exception:", error);
+      toast.error("An error occurred during Google sign-in.");
+    }
+  };
 
   return (
     <div
@@ -84,10 +105,23 @@ const LoginPage = () => {
               </div>
 
               <div className="flex gap-4 justify-center py-4">
-                <FaGoogle size={30} />
-                <FaFacebook size={30} />
-                <FaLinkedin size={30} />
-                <FaDiscord size={30} />
+                <FaGoogle
+                  onClick={handleGoogleSignIn}
+                  size={30}
+                  className="cursor-pointer hover:text-blue-500 transition-colors"
+                />
+                <FaFacebook
+                  size={30}
+                  className="cursor-pointer hover:text-blue-600 transition-colors"
+                />
+                <FaLinkedin
+                  size={30}
+                  className="cursor-pointer hover:text-blue-700 transition-colors"
+                />
+                <FaDiscord
+                  size={30}
+                  className="cursor-pointer hover:text-purple-500 transition-colors"
+                />
               </div>
 
               <Link href="/auth/signup" className="pt-10 text-center  ">
