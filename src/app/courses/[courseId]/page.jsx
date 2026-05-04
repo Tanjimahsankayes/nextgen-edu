@@ -6,6 +6,7 @@ import { FaPlay } from "react-icons/fa";
 import { auth } from '@/lib/auth';
 import { headers } from 'next/headers';
 import { redirect } from 'next/navigation';
+import Link from 'next/link';
 
 const CourseDetails = async({params}) => {
 
@@ -65,16 +66,19 @@ const CourseDetails = async({params}) => {
                 <h4>
                   <span className="text-xl "> {level}</span>
                 </h4>
-                <h4 className="flex items-center gap-2 text-amber-300 text-right ml-auto text-2xl font-bold ">
+                <h4 className="flex items-center gap-2 text-amber-800 text-right ml-auto text-2xl font-bold ">
                   {rating} <IoIosStarHalf />
                 </h4>
               </div>
 
               <div className="card-actions justify-end items-center flex ">
-                <p className=" ">
+                <p >
                   Duration :
-                  <span className="text-xl text-amber-300">{duration}</span>
+                  <span className="text-xl text-amber-800">{duration}</span>
                 </p>
+                <button className="btn btn-primary">
+                  <Link href="/curriculum" >Course Curriculum</Link>
+                </button>
                 <button className="btn btn-primary">
                   Start
                   <span>
