@@ -16,9 +16,9 @@ const CoursesPage = () => {
   return (
     <div className="bg-accent">
       <div className="w-11/12 mx-auto">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col-reverse md:flex-row items-center justify-between">
           <h2 className="text-3xl font-bold py-6">Available Course :</h2>
-          <div className="relative w-full max-w-md">
+          <div className="relative w-full max-w-md mt-6 md:mt-0">
             <input
               type="text"
               placeholder="Search course by title..."
