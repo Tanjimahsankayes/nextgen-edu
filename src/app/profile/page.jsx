@@ -3,10 +3,12 @@
 import { useEffect, useState } from "react";
 import { useSession } from "@/lib/auth-client";
 import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 
 const MyProfile = () => {
   const { data, isPending } = useSession();
   const user = data?.user;
+  const router = useRouter();
 
   const [form, setForm] = useState({
     dob: "",
@@ -24,6 +26,7 @@ const MyProfile = () => {
   };
 
   const handleSubmit = async (e) => {
+
     e.preventDefault();
 
     const res = await fetch("/api/profile", {
@@ -34,6 +37,7 @@ const MyProfile = () => {
         userId: user?.id,
       }),
     });
+    
 
     if (res.ok) {
       toast.success("Profile saved successfully");
@@ -41,14 +45,19 @@ const MyProfile = () => {
       toast.error("Something went wrong");
     }
   };
+  
+    useEffect(() => {
+      if (!isPending && !user) {
+        toast.error("Please login first");
+        router.push("/auth/signin");
+      }
+    }, [user, isPending, router]);
 
   if (isPending) {
     return <div className="text-white p-10">Loading...</div>;
   }
 
-  if (!user) {
-    return <div className="text-white p-10">Please login first</div>;
-  }
+  
 
   return (
     <div className="bg-[#0D0C22] min-h-screen text-white">
@@ -57,10 +66,10 @@ const MyProfile = () => {
 
         <div className="bg-[#1A1833] p-5 rounded-xl space-y-1">
           <p>
-            <b>Name:</b> {user.name}
+            <b>Name:</b> {user?.name}
           </p>
           <p>
-            <b>Email:</b> {user.email}
+            <b>Email:</b> {user?.email}
           </p>
         </div>
 
