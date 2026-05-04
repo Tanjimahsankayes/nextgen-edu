@@ -7,6 +7,7 @@ import { CiLocationArrow1 } from "react-icons/ci";
 import { IoPlayOutline } from "react-icons/io5";
 import { Poppins } from "next/font/google";
 import { useSession } from "@/lib/auth-client";
+import { motion } from "framer-motion";
 
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "600"] });
@@ -14,6 +15,7 @@ const Banner = () => {
 
   const {data} = useSession();
   const user = data?.user;
+  const text = "Welcome";
   return (
     <div className="relative overflow-hidden w-full">
       <div
@@ -28,12 +30,35 @@ const Banner = () => {
           <div className="space-y-4 flex justify-center flex-col relative ">
             <div className="text-center md:text-left pt-4">
               {user ? (
-                <>
-                  <h3 className="text-3xl font-bold uppercase">
-                    Welcome
-                    <span className="text-amber-300"> {user.name}! </span>
-                  </h3>
-                </>
+                <h3 className="text-3xl font-bold uppercase flex flex-wrap justify-center md:justify-start
+                ">
+                  {text.split("").map((char, index) => (
+                    <motion.span
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{
+                        delay: index * 0.05,
+                        duration: 0.3,
+                      }}
+                    >
+                      {char}
+                    </motion.span>
+                  ))}
+
+                  <span>&nbsp;</span>
+                  <motion.span
+                    className="text-amber-300"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{
+                      delay: text.length * 0.05 + 0.3,
+                      duration: 0.4,
+                    }}
+                  >
+                    {user.name}!
+                  </motion.span>
+                </h3>
               ) : (
                 ""
               )}
