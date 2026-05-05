@@ -78,12 +78,7 @@ const RegisterPage = () => {
                 name="password"
                 required
               />
-              {/* <input
-                type="password"
-                className="input w-full rounded-full outline-none"
-                placeholder="Confirm Password"
-                name="password"
-              /> */}
+
 
               <button
                 type="submit"
