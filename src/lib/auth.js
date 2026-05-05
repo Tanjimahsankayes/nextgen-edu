@@ -3,7 +3,6 @@ import "server-only";
 import { betterAuth } from "better-auth";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
 
-// Check if required environment variables are set
 const authDbUrl = process.env.AUTH_DB_URL;
 const googleClientId = process.env.GOOGLE_CLIENT_ID;
 const googleClientSecret = process.env.GOOGLE_CLIENT_SECRET;
@@ -18,7 +17,6 @@ if (!googleClientId || !googleClientSecret) {
   );
 }
 
-// Initialize database only if URL is provided
 let db = null;
 let client = null;
 
@@ -39,17 +37,16 @@ export const auth = betterAuth({
   emailAndPassword: {
     enabled: true,
   },
-  socialProviders: {
-    google: {
-      clientId: googleClientId || "",
-      clientSecret: googleClientSecret || "",
-      enabled: !!(googleClientId && googleClientSecret),
+   socialProviders: {
+        google: { 
+            clientId: process.env.GOOGLE_CLIENT_ID, 
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET, 
+        }, 
     },
-  },
   database: db ? mongodbAdapter(db, { client }) : undefined,
   session: {
-    expiresIn: 60 * 60 * 24 * 7, // 7 days
-    updateAge: 60 * 60 * 24, // 1 day
+    expiresIn: 60 * 60 * 24 * 7, 
+    updateAge: 60 * 60 * 24,
   },
   account: {
     accountLinking: {

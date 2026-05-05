@@ -36,25 +36,9 @@ const LoginPage = () => {
   };
 
   const handleGoogleSignIn = async () => {
-    try {
-      console.log("Attempting Google sign-in...");
-      const { data, error } = await authClient.signIn.social({
-        provider: "google",
-        callbackURL: "/",
-      });
-
-      console.log("Google sign-in response:", { data, error });
-
-      if (error) {
-        console.error("Google sign-in error:", error);
-        toast.error("Google sign-in failed. Please try again.");
-      } else {
-        toast.success("Signed in with Google successfully!");
-      }
-    } catch (error) {
-      console.error("Google sign-in exception:", error);
-      toast.error("An error occurred during Google sign-in.");
-    }
+     const data = await authClient.signIn.social({
+       provider: "google",
+     });
   };
 
   return (
