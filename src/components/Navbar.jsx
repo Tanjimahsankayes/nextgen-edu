@@ -6,6 +6,13 @@ import { usePathname } from "next/navigation";
 import { signOut, useSession } from "@/lib/auth-client";
 import { FaCircleUser } from "react-icons/fa6";
 import { FaUserGraduate } from "react-icons/fa";
+import { AiOutlineHome } from "react-icons/ai";
+import { MdOutlineLocalLibrary } from "react-icons/md";
+import { CgProfile } from "react-icons/cg";
+import { IoSettingsOutline } from "react-icons/io5";
+import { GoBook } from "react-icons/go";
+import { PiSignOutBold } from "react-icons/pi";
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -20,165 +27,179 @@ const Navbar = () => {
       <li>
         <Link
           href="/"
-          className={`transition ${
+          className={`transition inline-flex items-center gap-2 ${
             pathname === "/"
-              ? "text-amber-300 font-semibold"
-              : "hover:text-amber-300"
+              ? "text-[#1ACEC2] font-semibold"
+              : "hover:text-[#1ACEC2]"
           }`}
         >
+          <AiOutlineHome size={18} />
           Home
         </Link>
       </li>
       <li>
         <Link
           href="/courses"
-          className={`transition ${
+          className={`transition inline-flex items-center gap-2 ${
             pathname === "/courses"
-              ? "text-amber-300 font-semibold"
-              : "hover:text-amber-300"
+              ? "text-[#1ACEC2] font-semibold"
+              : "hover:text-[#1ACEC2]"
           }`}
         >
+          <MdOutlineLocalLibrary size={18} />
           Courses
         </Link>
       </li>
-      <li>
-        <Link
-          href="/profile"
-          className={`transition ${
-            pathname === "/profile"
-              ? "text-amber-300 font-semibold"
-              : "hover:text-amber-300"
-          }`}
-        >
-          My Profile
-        </Link>
-      </li>
+      {user && (
+        <li>
+          <Link
+            href="/profile"
+            className={`transition inline-flex items-center gap-2 ${
+              pathname === "/profile"
+                ? "text-[#1ACEC2] font-semibold"
+                : "hover:text-[#1ACEC2]"
+            }`}
+          >
+            <CgProfile size={18} />
+            My Profile
+          </Link>
+        </li>
+      )}
     </>
   );
 
   return (
-    <div className="sticky top-0 z-50 backdrop-blur bg-[#124170]/80 border-b border-white/10">
-      <div className="navbar w-11/12 mx-auto">
+    <div className="sticky top-0 z-50 backdrop-blur-md bg-slate-950/90 border-b border-slate-800">
+      <div className="navbar w-11/12 max-w-7xl mx-auto py-2">
         <div className="navbar-start">
-          <div className="dropdown">
-            <div
-              tabIndex={0}
-              className="btn btn-ghost lg:hidden hover:bg-white/10"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
-            </div>
-
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 w-52 p-2 rounded-box bg-[#1A1833] text-white shadow-lg z-50"
-            >
-              {links}
-            </ul>
-          </div>
-
           <Link href="/">
             <Image
               src="/images/logBG.png"
-              alt="logo"
-              height={90}
-              width={90}
-              className="rounded-xl h-10 w-auto hover:scale-105 transition"
+              alt="NextGen Edu Logo"
+              height={100}
+              width={100}
+              className="rounded-xl h-9 w-auto hover:scale-105 transition"
             />
           </Link>
         </div>
 
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal gap-6 text-white text-[15px]">
+          <ul className="menu menu-horizontal gap-6 text-slate-200 text-[15px] font-medium p-0">
             {links}
           </ul>
         </div>
 
-        <div className="navbar-end">
+        <div className="navbar-end gap-1.5 sm:gap-2">
           {user ? (
             <div className="dropdown dropdown-end">
               <div
                 tabIndex={0}
-                className="cursor-pointer p-2 rounded-full hover:bg-white/10 transition"
+                role="button"
+                className="flex items-center gap-2.5 cursor-pointer p-2 rounded-full hover:bg-slate-800 transition"
               >
-                <FaUserGraduate size={28} className="text-white" />
+                <div className="w-9 h-9 rounded-full bg-[#0D9488]/10 border border-[#0D9488]/30 flex items-center justify-center">
+                  <FaUserGraduate size={20} className="text-[#1ACEC2]" />
+                </div>
+                <div className="hidden sm:block text-left">
+                  <p className="text-sm font-semibold text-white truncate max-w-[150px]">
+                    {user?.name}
+                  </p>
+                  <p className="text-xs text-slate-400 truncate max-w-[150px]">
+                    Student
+                  </p>
+                </div>
               </div>
               <ul
                 tabIndex={0}
-                className="dropdown-content mt-3 w-56 p-3 rounded-2xl bg-[#1A1833] text-white shadow-xl space-y-1"
+                className="dropdown-content mt-4 w-60 p-3 rounded-2xl bg-slate-900 border border-slate-800 text-slate-200 shadow-xl space-y-1.5"
               >
-                <li className="font-semibold text-white/80 px-2 py-1">
-                  {user?.name}
-                </li>
-
                 <li>
                   <Link
                     href="/profile"
-                    className="hover:bg-white/10 rounded-lg"
+                    className="hover:bg-slate-800 rounded-lg p-2.5 text-sm inline-flex items-center gap-2.5 w-full"
                   >
+                    <CgProfile size={18} className="text-[#1ACEC2]" />
                     My Profile
                   </Link>
                 </li>
-
                 <li>
                   <Link
-                    href="/profile"
-                    className="hover:bg-white/10 rounded-lg"
+                    href="/settings"
+                    className="hover:bg-slate-800 rounded-lg p-2.5 text-sm inline-flex items-center gap-2.5 w-full"
                   >
-                    Settings
+                    <IoSettingsOutline size={18} className="text-[#1ACEC2]" />
+                    Account Settings
                   </Link>
                 </li>
-
                 <li>
                   <Link
                     href="/curriculum"
-                    className="hover:bg-white/10 rounded-lg"
+                    className="hover:bg-slate-800 rounded-lg p-2.5 text-sm inline-flex items-center gap-2.5 w-full"
                   >
-                    Curriculum
+                    <GoBook size={18} className="text-[#1ACEC2]" />
+                    My Curriculum
                   </Link>
                 </li>
 
-                <div className="border-t border-white/10 my-2"></div>
+                <div className="border-t border-slate-800 my-2.5"></div>
 
                 <li>
                   <button
                     onClick={() => signOut()}
-                    className="text-red-400 hover:bg-red-500/20 rounded-lg"
+                    className="text-red-400 hover:bg-red-500/10 rounded-lg p-2.5 text-sm inline-flex items-center gap-2.5 w-full font-medium"
                   >
+                    <PiSignOutBold size={18} />
                     Sign Out
                   </button>
                 </li>
               </ul>
             </div>
           ) : (
-            <div className="flex gap-3">
+            <div className="flex gap-2">
               <Link
                 href="/auth/signin"
-                className="btn btn-sm rounded-full bg-transparent border border-white/30 text-white hover:bg-white hover:text-black transition"
+                className="btn btn-sm btn-ghost rounded-full text-slate-200 text-xs sm:text-sm font-semibold"
               >
                 Login
               </Link>
-
               <Link
                 href="/auth/signup"
-                className="btn btn-sm rounded-full bg-amber-400 text-black hover:bg-amber-300 transition hidden md:inline-flex"
+                className="btn btn-sm rounded-full bg-[#0D9488] border-none text-white text-xs sm:text-sm font-semibold hover:bg-[#0b7a70] transition hidden md:inline-flex"
               >
-                Register
+                Get Started
               </Link>
             </div>
           )}
+
+          {/* Mobile Menu Dropdown */}
+          <div className="dropdown dropdown-end lg:hidden ml-1">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost btn-sm btn-circle text-slate-300 hover:bg-slate-800"
+            >
+              <HiOutlineMenuAlt3 size={24} />
+            </div>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content mt-4 w-60 p-3 rounded-2xl bg-slate-900 border border-slate-800 text-slate-200 shadow-xl space-y-1 z-50"
+            >
+              {links}
+              {!user && (
+                <>
+                  <div className="border-t border-slate-800 my-2"></div>
+                  <li>
+                    <Link
+                      href="/auth/signup"
+                      className="text-[#1ACEC2] font-semibold"
+                    >
+                      Sign Up Now
+                    </Link>
+                  </li>
+                </>
+              )}
+            </ul>
+          </div>
         </div>
       </div>
     </div>
