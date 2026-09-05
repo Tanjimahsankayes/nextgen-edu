@@ -1,9 +1,11 @@
 import AboutPage from "@/components/About";
 import Banner from "@/components/Banner";
+import ContactPage from "@/components/ContactPage";
 import InstructorPage from "@/components/Instructor";
 import PopularCoursesPage from "@/components/PopularCourses";
 import LearningTips from "@/components/Tips";
 import TrendingCoursesPage from "@/components/TrendingCourses";
+import FAQPage from "@/components/faqData";
 import Image from "next/image";
 
 export default function Home() {
@@ -15,7 +17,9 @@ export default function Home() {
         <PopularCoursesPage></PopularCoursesPage>
         <TrendingCoursesPage></TrendingCoursesPage>
         <LearningTips></LearningTips>
+        <FAQPage></FAQPage>
         <InstructorPage></InstructorPage>
+        <ContactPage></ContactPage>
       </main>
     </div>
   );

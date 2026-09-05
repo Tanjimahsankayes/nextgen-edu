@@ -84,13 +84,14 @@ const Banner = () => {
               <FiArrowUpRight className="text-lg" />
             </Link>
 
-            <button
+            <Link
               type="button"
+              href="/DemoClass"
               className="inline-flex items-center gap-2 bg-slate-800/80 hover:bg-slate-800 text-slate-200 border border-slate-700/80 font-semibold px-6 py-3.5 rounded-full backdrop-blur-md hover:-translate-y-0.5 transition-all duration-300 text-sm sm:text-base"
             >
               <FiPlayCircle className="text-teal-400 text-lg" />
               Watch Demo
-            </button>
+            </Link>
           </div>
 
           {/* Quick Trust Highlights */}
