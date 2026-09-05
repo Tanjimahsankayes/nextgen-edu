@@ -81,7 +81,7 @@ const CourseCard = ({ course }) => {
               </button>
             </Link>
 
-            <Link href={`/enroll/${id}`}>
+            <Link href={`/enroll`}>
               <button className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-[#0D9488] hover:bg-[#0b7a70] rounded-full shadow-md shadow-teal-950/50 transition">
                 Enroll
                 <FiArrowRight size={14} />
